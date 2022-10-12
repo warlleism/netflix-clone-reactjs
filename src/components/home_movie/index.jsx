@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-
+import Spinner from "../spinner";
 import './style.scss'
+
 
 const Home_Movie = () => {
 
@@ -16,7 +17,9 @@ const Home_Movie = () => {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=1")
             .then((res) => res.json())
             .then((data) => {
-                setData(data)
+                setInterval(() => {
+                    setData(data)
+                }, 2000)
             })
     }, [])
 
@@ -31,10 +34,16 @@ const Home_Movie = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: "center"
             }}>
-            <div className="nome-titulo-container">
-                <div className="titulo">{data?.results?.[random]?.original_title}</div>
-                <div className="descricao">{data?.results?.[random]?.overview?.substring(0,200)}...</div>
-            </div>
+            {
+                data == 0 ?
+                    <Spinner />
+                    :
+                    <div className="nome-titulo-container">
+                        <div className="titulo">{data?.results?.[random]?.original_title}</div>
+                        <div className="descricao">{data?.results?.[random]?.overview?.substring(0, 200)}...</div>
+                    </div>
+            }
+
         </div>
     )
 }

@@ -1,0 +1,42 @@
+.spinner-continer {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999999999;
+
+    .spinner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: inline-block;
+        padding: 40px;
+        border-radius: 50%;
+        animation: rotate 0.7s linear infinite;
+        background: linear-gradient(90deg, black 0%, red 53%);
+    }
+
+    .spinner::after {
+        content: " ";
+        background: black;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0px;
+        bottom: 0px;
+        border-radius: 50%;
+        margin: 5px;
+    }
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
