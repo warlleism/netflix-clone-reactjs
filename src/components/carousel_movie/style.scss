@@ -1,7 +1,6 @@
 .carousel-continer {
     bottom: 180px;
     position: relative;
-    background-color: transparent;
     background-color: #0f0f0f;
     box-shadow: #0f0f0f 10px 10px 90px 100px;
 
@@ -37,13 +36,82 @@
     }
 
     .cards-continer {
+        width: 100%;
         display: flex;
-        transition: 1s ease-in-out;
+        flex-direction: row;
+        justify-content: center;
         scroll-behavior: smooth;
+        transition: 1s ease-in-out;
 
         img {
             margin: 0px 10px 0px 10px;
-            max-width: 200px;
+            width: 9.3%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1724px) {
+    .carousel-continer {
+        overflow-x: scroll !important;
+
+        .icon-container {
+            display: none;
+        }
+
+        .cards-continer {
+            transform: translateX(880px) !important;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1556px) {
+    .carousel-continer {
+        .cards-continer {
+            transform: translateX(870px) !important;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1382px) {
+    .carousel-continer {
+        .cards-continer {
+            transform: translateX(790px) !important;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1228px) {
+    .carousel-continer {
+        .cards-continer {
+            transform: translateX(730px) !important;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1108px) {
+    .carousel-continer {
+        .cards-continer {
+            transform: translateX(670px) !important;
+        }
+    }
+}
+@media screen and (max-width: 922px) {
+    .carousel-continer {
+        .cards-continer {
+            transform: translateX(590px) !important;
+        }
+    }
+}
+@media screen and (max-width: 786px) {
+    .carousel-continer {
+        .cards-continer {
+            transform: translateX(530px) !important;
+            margin: 0px 2px 0px 2px;
         }
     }
 }

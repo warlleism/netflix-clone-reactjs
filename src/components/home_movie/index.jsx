@@ -17,7 +17,7 @@ const Home_Movie = () => {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=1")
             .then((res) => res.json())
             .then((data) => {
-                setInterval(() => {
+                setTimeout(() => {
                     setData(data)
                 }, 2000)
             })
