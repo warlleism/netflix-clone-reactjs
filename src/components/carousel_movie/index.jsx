@@ -7,7 +7,7 @@ import './style.scss'
 const Carousel_Movie = () => {
 
     const [data, setData] = useState([])
-    const [position, setPosition] = useState(1040)
+    const [position, setPosition] = useState(1060)
     const baseUrl = "https://image.tmdb.org/t/p/original/"
 
     useEffect(() => {
@@ -21,10 +21,10 @@ const Carousel_Movie = () => {
     }, [])
 
     const Rigth = () => {
-        position == -1072 ? setPosition(1040) : setPosition(position - 264)
+        position == -1072 ? setPosition(1060) : setPosition(position - 264)
     }
     const Left = () => {
-        position == 1040 ? setPosition(-1072) : setPosition(position + 264)
+        position == 1060 ? setPosition(-1072) : setPosition(position + 264)
     }
 
     const ViewDescribeMovie = (event) => {

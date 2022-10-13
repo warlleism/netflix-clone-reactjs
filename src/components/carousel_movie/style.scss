@@ -42,14 +42,16 @@
         justify-content: center;
         scroll-behavior: smooth;
         transition: .5s ease-in-out;
-        
-        
+        cursor: pointer;
+
+
         .cards {
             z-index: 99999;
             position: relative;
             margin: 0px 10px 0px 10px;
             background-color: #292929;
-            
+            height: 266px;
+
             .info {
                 top: 10%;
                 opacity: 0;
@@ -75,11 +77,33 @@
 }
 
 
-
-
 @media screen and (max-width: 1724px) {
+    * {
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: blue orange;
+        }
+
+        *::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: black;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: rgb(41, 39, 39);
+            border-radius: 20px;
+            border: 6px solid black;
+        }
+    }
+
     .carousel-continer {
         overflow-x: scroll !important;
+        overflow-y: hidden;
+
 
         .icon-container {
             display: none;
@@ -143,6 +167,7 @@
         }
     }
 }
+
 @media screen and (max-width: 960px) {
     .carousel-continer {
         .cards-continer {

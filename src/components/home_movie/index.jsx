@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../spinner";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import './style.scss'
 
 
@@ -34,13 +37,18 @@ const Home_Movie = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: "center"
             }}>
+            {console.log(data)}
             {
                 data == 0 ?
                     <Spinner />
                     :
                     <div className="nome-titulo-container">
                         <div className="titulo">{data?.results?.[random]?.original_title}</div>
-                        <div className="descricao">{data?.results?.[random]?.overview?.substring(0, 200)}...</div>
+                        <div className="descricao"><strong style={{ color: "#04c304" }}>{data?.results?.[random]?.vote_average}% relevante </strong>{data?.results?.[random]?.overview?.substring(0, 200)}...</div>
+                        <div className="info-content">
+                            <div className="assistir"><FontAwesomeIcon icon={faPlay} className="icon" /> Assistir</div>
+                            <div className="mais-informacoes"><FontAwesomeIcon icon={faCircleInfo} className="icon" /> Mais informações</div>
+                        </div>
                     </div>
             }
 
