@@ -10,10 +10,14 @@ const Home_Movie = () => {
 
     const [data, setData] = useState([])
     const [random, setRandom] = useState([])
+    const [randomRate, setRandomRate] = useState([])
     const baseUrl = "https://image.tmdb.org/t/p/original/"
 
-    const RandomNumer = () => {
-        setRandom(parseInt(Math?.random() * (20 - 1) + 1))
+    const RandomNumer = (min, max) => {
+        setRandom(parseInt(Math?.random() * (max - min) + min))
+    }
+    const RandomRate = (min, max) => {
+        setRandomRate(parseInt(Math?.random() * (max - min) + min))
     }
 
     useEffect(() => {
@@ -28,6 +32,7 @@ const Home_Movie = () => {
 
     useEffect(() => {
         RandomNumer(1, 20)
+        RandomRate(30, 100)
     }, [data])
 
     return (
@@ -44,7 +49,7 @@ const Home_Movie = () => {
                     :
                     <div className="nome-titulo-container">
                         <div className="titulo">{data?.results?.[random]?.original_title}</div>
-                        <div className="descricao"><strong style={{ color: "#04c304" }}>{data?.results?.[random]?.vote_average}% relevante </strong>{data?.results?.[random]?.overview?.substring(0, 200)}...</div>
+                        <div className="descricao"><strong style={{ color: "#04c304" }}>{randomRate}% relevante </strong>{data?.results?.[random]?.overview?.substring(0, 200)}...</div>
                         <div className="info-content">
                             <div className="assistir"><FontAwesomeIcon icon={faPlay} className="icon" /> Assistir</div>
                             <div className="mais-informacoes"><FontAwesomeIcon icon={faCircleInfo} className="icon" /> Mais informações</div>
