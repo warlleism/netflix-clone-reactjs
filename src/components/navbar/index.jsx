@@ -13,9 +13,19 @@ const NavBar = () => {
 
     const [Caret, setCaret] = useState(true)
 
-    return (
-        <div className="navbar-container">
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header')
+        if (window.scrollY != 0) {
+            header.style.backgroundColor = "#00000082"
+        } else {
+            header.style.backgroundColor = "transparent"
+        }
 
+
+    })
+
+    return (
+        <div className="navbar-container" id="header">
             <div className="left-home-list">
                 <img src={require('../../img/logo-netflix.png')} alt="" />
                 <ul>

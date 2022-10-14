@@ -8,10 +8,10 @@ import './style.scss'
 const Home = () => {
 
     return (
-        <div className="home"> 
+        <div className="home">
             <NavBar />
             <Home_Movie />
-            <Carousel_Movie />
+            <Carousel_Movie categoria={"Em alta"} url={"https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=1"} />
         </div>
     )
 }

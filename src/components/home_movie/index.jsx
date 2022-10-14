@@ -42,7 +42,6 @@ const Home_Movie = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: "center"
             }}>
-            {console.log(data)}
             {
                 data == 0 ?
                     <Spinner />
