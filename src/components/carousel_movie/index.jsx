@@ -38,7 +38,6 @@ const Carousel_Movie = (props) => {
     }
 
     const HiddenDescribeMovie = (event) => {
-        const b = event?.querySelector('#img')
         const a = event.querySelector('#cardInfo')
         a.style.opacity = '0'
         a.style.width = '0px'

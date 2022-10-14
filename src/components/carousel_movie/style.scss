@@ -145,74 +145,18 @@
         overflow-y: hidden;
         overflow-x: scroll !important;
 
-
         .icon-container {
             display: none;
         }
 
         .cards-continer {
-            transform: translateX(1200px) !important;
+            justify-content: space-between !important;
+            transform: translateX(0px) !important;
+
+            .info {
+                display: none !important;
+            }
         }
     }
 
-}
-
-@media screen and (max-width: 1556px) {
-    .carousel-continer {
-        .cards-continer {
-            transform: translateX(1230px) !important;
-        }
-    }
-
-}
-
-@media screen and (max-width: 1458px) {
-    .carousel-continer {
-        .cards-continer {
-            transform: translateX(1270px) !important;
-        }
-    }
-
-}
-
-@media screen and (max-width: 1338px) {
-    .carousel-continer {
-        .cards-continer {
-            transform: translateX(1330px) !important;
-        }
-    }
-
-}
-
-@media screen and (max-width: 1228px) {
-    .carousel-continer {
-        .cards-continer {
-            transform: translateX(1390px) !important;
-        }
-    }
-}
-
-@media screen and (max-width: 1128px) {
-    .carousel-continer {
-        .cards-continer {
-            transform: translateX(1430px) !important;
-        }
-    }
-}
-
-@media screen and (max-width: 1044px) {
-    .carousel-continer {
-        .cards-continer {
-            margin: 0px 2px 0px 2px;
-            transform: translateX(1470px) !important;
-        }
-    }
-}
-
-@media screen and (max-width: 960px) {
-    .carousel-continer {
-        .cards-continer {
-            transform: translateX(1500px) !important;
-        }
-    }
 }
