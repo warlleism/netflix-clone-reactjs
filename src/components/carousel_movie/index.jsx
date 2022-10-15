@@ -11,7 +11,7 @@ import './style.scss'
 const Carousel_Movie = (props) => {
 
     const [data, setData] = useState([])
-    const [position, setPosition] = useState(1060)
+    const [position, setPosition] = useState(0)
     const baseUrl = "https://image.tmdb.org/t/p/original/"
 
     useEffect(() => {
@@ -25,17 +25,18 @@ const Carousel_Movie = (props) => {
     }, [])
 
     const Rigth = () => {
-        position == -1052 ? setPosition(1060) : setPosition(position - 264)
+        position == -28.8 ? setPosition(0) : setPosition(position - 4.8)
     }
     const Left = () => {
-        position == 1060 ? setPosition(-1052) : setPosition(position + 264)
+        position == 0 ? setPosition(-28.8) : setPosition(position + 4.8)
     }
 
-    const ViewDescribeMovie = (event, opcity, width, margin) => {
-        const a = event?.querySelector('#cardInfo')
-        a.style.opacity = opcity
-        event.style.marginLeft = `-${margin}px`
-        a.style.width = `${width}px`
+    const ViewDescribeMovie = (event, opcity, width, translate, margin) => {
+        const a = event?.querySelector('#cardInfo');
+        event.style.transform = `translateX(-${translate}px)`;
+        a.style.marginRight = `-${margin}px`
+        a.style.opacity = opcity;
+        a.style.width = `${width}px`;
     }
 
     return (
@@ -47,22 +48,22 @@ const Carousel_Movie = (props) => {
             <div className="icon-container rigth" onClick={() => Rigth(-283)}>
                 <FontAwesomeIcon icon={faChevronRight} className="icon" />
             </div>
-            <div className="cards-continer" style={{ transform: `translateX(${position}px)` }}>
+            <div className="cards-continer" style={{ transform: `translateX(${position}%)` }}>
                 {
                     data?.results?.map(data => {
                         return (
-                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target, 1, 360, 130)} onMouseLeave={(event) => ViewDescribeMovie(event.target, 0, 0, 0)}>
+                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target, 1, 360, 180, 180)} onMouseLeave={(event) => ViewDescribeMovie(event.target, 0, 0, 0, 0)}>
                                 <img className="img" id="img" src={`${baseUrl}${data?.poster_path}`} alt="" />
                                 <div id="cardInfo" className="info">
-                                    <div style={{  width: "300px", fontSize: '1.6rem', marginLeft: 10 }}>
+                                    <div style={{ width: "300px", fontSize: '1.6rem' }}>
                                         {data?.original_title}
                                     </div>
-                                    <div style={{ fontSize: '0.9rem', width: "300px", marginLeft: 10}}>
+                                    <div style={{ fontSize: '0.9rem', width: "300px" }}>
                                         {data?.overview?.substring(0, 140)}...
                                     </div>
                                     <div className="continer-info-botoes" >
                                         <div className="botao-assistir" >
-                                            <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px', marginRight: "8px" }} />
+                                            <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px' }} />
                                             Assistir
                                         </div>
                                         <div className="container-icon">
