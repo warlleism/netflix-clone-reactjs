@@ -25,18 +25,24 @@ const Carousel_Movie = (props) => {
     }, [])
 
     const Rigth = () => {
-        position == -28.8 ? setPosition(0) : setPosition(position - 4.8)
+        position == -22 ? setPosition(0) : setPosition(position - 5.5)
     }
     const Left = () => {
-        position == 0 ? setPosition(-28.8) : setPosition(position + 4.8)
+        position == 0 ? setPosition(-22) : setPosition(position + 5.5)
     }
 
-    const ViewDescribeMovie = (event, opcity, width, translate, margin) => {
+    const ViewDescribeMovie = (event, opacity, width, translate, margin) => {
         const a = event?.querySelector('#cardInfo');
-        event.style.transform = `translateX(-${translate}px)`;
-        a.style.marginRight = `-${margin}px`
-        a.style.opacity = opcity;
-        a.style.width = `${width}px`;
+        if (position == 0) {
+            event.style.transform = `translateX(0px)`;
+            a.style.width = `${width}px`;
+            a.style.opacity = opacity;
+        } else {
+            event.style.transform = `translateX(-${translate}px)`;
+            event.style.marginRight = `-${margin}px`
+            a.style.opacity = opacity;
+            a.style.width = `${width}px`;
+        }
     }
 
     return (
@@ -52,7 +58,8 @@ const Carousel_Movie = (props) => {
                 {
                     data?.results?.map(data => {
                         return (
-                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target, 1, 360, 180, 180)} onMouseLeave={(event) => ViewDescribeMovie(event.target, 0, 0, 0, 0)}>
+                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target, 1, 360, 370, 370)} onMouseLeave={(event) => ViewDescribeMovie(event.target, 0, 0, 0, 0)}>
+                                {console.log(position)}
                                 <img className="img" id="img" src={`${baseUrl}${data?.poster_path}`} alt="" />
                                 <div id="cardInfo" className="info">
                                     <div style={{ width: "300px", fontSize: '1.6rem' }}>
@@ -72,7 +79,7 @@ const Carousel_Movie = (props) => {
                                         <div className="container-icon">
                                             <FontAwesomeIcon icon={faThumbsUp} className="icon-info" />
                                         </div>
-                                        <div className="container-icon" onClick={() => console.log('teste')}>
+                                        <div className="container-icon">
                                             <FontAwesomeIcon icon={faThumbsDown} className="icon-info" />
                                         </div>
                                     </div>
