@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { faBell } from "@fortawesome/free-solid-svg-icons"
 import { faGift } from "@fortawesome/free-solid-svg-icons"
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons"
