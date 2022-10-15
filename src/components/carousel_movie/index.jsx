@@ -31,17 +31,11 @@ const Carousel_Movie = (props) => {
         position == 1060 ? setPosition(-1052) : setPosition(position + 264)
     }
 
-    const ViewDescribeMovie = (event) => {
+    const ViewDescribeMovie = (event, opcity, width, margin) => {
         const a = event?.querySelector('#cardInfo')
-        a.style.opacity = '1'
-        a.style.width = '350px'
-    }
-
-    const HiddenDescribeMovie = (event) => {
-        const a = event.querySelector('#cardInfo')
-        a.style.opacity = '0'
-        a.style.width = '0px'
-
+        a.style.opacity = opcity
+        event.style.marginLeft = `-${margin}px`
+        a.style.width = `${width}px`
     }
 
     return (
@@ -57,18 +51,18 @@ const Carousel_Movie = (props) => {
                 {
                     data?.results?.map(data => {
                         return (
-                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target)} onMouseLeave={(event) => HiddenDescribeMovie(event.target)}>
+                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target, 1, 360, 130)} onMouseLeave={(event) => ViewDescribeMovie(event.target, 0, 0, 0)}>
                                 <img className="img" id="img" src={`${baseUrl}${data?.poster_path}`} alt="" />
                                 <div id="cardInfo" className="info">
-                                    <div style={{ width: "330px", fontSize: '2rem', marginBottom: "20px" }}>
+                                    <div style={{  width: "300px", fontSize: '1.6rem', marginLeft: 10 }}>
                                         {data?.original_title}
                                     </div>
-                                    <div style={{ width: "330px", margin: "0 auto" }}>
-                                        {data?.overview?.substring(0, 150)}...
+                                    <div style={{ fontSize: '0.9rem', width: "300px", marginLeft: 10}}>
+                                        {data?.overview?.substring(0, 140)}...
                                     </div>
                                     <div className="continer-info-botoes" >
                                         <div className="botao-assistir" >
-                                            <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px', marginRight: "10px" }} />
+                                            <FontAwesomeIcon icon={faPlay} style={{ fontSize: '20px', marginRight: "8px" }} />
                                             Assistir
                                         </div>
                                         <div className="container-icon">
