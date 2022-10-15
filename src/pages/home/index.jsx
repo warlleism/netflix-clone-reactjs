@@ -13,7 +13,7 @@ const Home = () => {
             <Home_Movie />
             <Carousel_Movie categoria={"Populares na Netflix"} url={"https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=1"} />
             <Carousel_Movie categoria={"Em alta"} url={"https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=2"} />
-            <Carousel_Movie categoria={"Minh lista"} url={"https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=3"} />
+            <Carousel_Movie categoria={"Minha lista"} url={"https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=3"} />
         </div>
     )
 }

@@ -51,3 +51,23 @@
         }
     }
 }
+
+@media screen and (max-width: 918px) {
+    .navbar-container {
+        justify-content: center;
+
+        .rigth-home-list {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 648px) {
+    .navbar-container {
+        .left-home-list {
+            ul {
+                display: none;
+            }
+        }
+    }
+}

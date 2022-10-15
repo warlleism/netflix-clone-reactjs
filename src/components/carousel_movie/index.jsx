@@ -40,7 +40,7 @@ const Carousel_Movie = (props) => {
 
     return (
         <div className="carousel-continer">
-            <div style={{ fontSize: 30, color: "#ffff", fontWeight: 800, position: "absolute", top: -50, left: 20 }}>{props.categoria}</div>
+            <div style={{ fontSize: 30, color: "#ffff", fontWeight: 800, marginLeft: 12 }}>{props.categoria}</div>
             <div className="icon-container left" onClick={() => Left(283)}>
                 <FontAwesomeIcon icon={faChevronLeft} className="icon" />
             </div>

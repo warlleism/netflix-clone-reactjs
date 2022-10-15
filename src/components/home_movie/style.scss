@@ -21,7 +21,7 @@
         }
 
         .descricao {
-            width: 70%;
+            width: 100%;
             height: 200px;
             color: #ffff;
             margin-left: 50px;
@@ -30,19 +30,23 @@
         }
 
         .info-content {
-            width: 51%;
+            width: 50%;
             display: flex;
             font-weight: 500;
+            margin-left: 52px;
             align-items: center;
             margin-bottom: 300px;
-            justify-content: center;
 
             .assistir {
-                color: black;
+                display: flex;
+                width: 100px;
+                height: 45px;
                 cursor: pointer;
-                padding: 14px 30px;
+                color: black;
                 border-radius: 4px;
                 margin-right: 20px;
+                align-items: center;
+                justify-content: center;
                 background-color: #ffff;
                 transition: .2s ease-in-out;
             }
@@ -53,13 +57,18 @@
             }
 
             .mais-informacoes {
+                width: 200px;
+                height: 45px;
+                display: flex;
                 color: #ffff;
                 cursor: pointer;
-                padding: 14px 40px;
                 border-radius: 4px;
+                align-items: center;
+                justify-content: center;
                 transition: .2s ease-in-out;
                 background-color: rgba(255, 255, 255, 0.435);
             }
+
             .mais-informacoes:hover {
                 color: rgba(0, 0, 0, 0.67);
                 transition: .2s ease-in-out;
@@ -68,4 +77,76 @@
         }
     }
 
+}
+
+@media screen and (max-width: 1200px) {
+
+    .home_movie-container {
+        .nome-titulo-container {
+            .titulo {
+                margin-top: -200px;
+                font-size: 2.8rem;
+            }
+
+            .info-content {
+                margin-top: 50px;
+                margin-bottom: 0;
+
+                .assistir {
+                    width: 280px;
+                    height: 45px;
+                    font-size: 0.8rem;
+                }
+
+                .mais-informacoes {
+                    width: 400px;
+                    height: 45px;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 991px) {
+
+    .home_movie-container {
+        .nome-titulo-container {
+            width: 80%;
+        }
+    }
+
+}
+
+@media screen and (max-width: 492px) {
+
+    .home_movie-container {
+        height: 60vh;
+        background-color: red;
+        .nome-titulo-container {
+            box-shadow: none;
+            margin-top: 120px;
+            background-color: transparent;
+            .titulo{
+                width: 100%;
+                font-size: 3rem;
+                font-weight: 200;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .descricao {
+                font-size: 1rem;
+                width: 100%;
+                height: 20px;
+                overflow: hidden;
+            }
+        }
+        .info-content{
+            z-index: 9999;
+            width: 100% !important;
+            margin-top: 0px !important;
+        }
+    }
 }

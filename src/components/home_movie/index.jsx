@@ -50,7 +50,7 @@ const Home_Movie = () => {
                         <div className="titulo">{data?.results?.[random]?.original_title}</div>
                         <div className="descricao"><strong style={{ color: "#04c304" }}>{randomRate}% relevante </strong>{data?.results?.[random]?.overview?.substring(0, 200)}...</div>
                         <div className="info-content">
-                            <div className="assistir"><FontAwesomeIcon icon={faPlay} className="icon" /> Assistir</div>
+                            <div className="assistir"><FontAwesomeIcon icon={faPlay} className="icon" style={{marginRight: 8}} /> Assistir</div>
                             <div className="mais-informacoes"><FontAwesomeIcon icon={faCircleInfo} className="icon" /> Mais informações</div>
                         </div>
                     </div>
