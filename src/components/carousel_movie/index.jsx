@@ -60,7 +60,7 @@ const Carousel_Movie = (props) => {
                             <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target)} onMouseLeave={(event) => HiddenDescribeMovie(event.target)}>
                                 <img className="img" id="img" src={`${baseUrl}${data?.poster_path}`} alt="" />
                                 <div id="cardInfo" className="info">
-                                    <div style={{ fontSize: '2rem', marginBottom: "20px" }}>
+                                    <div style={{ width: "330px", fontSize: '2rem', marginBottom: "20px" }}>
                                         {data?.original_title}
                                     </div>
                                     <div style={{ width: "330px", margin: "0 auto" }}>

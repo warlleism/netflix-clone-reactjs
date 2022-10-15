@@ -46,9 +46,9 @@
 
         .cards {
             height: 266px;
+            display: flex;
             margin: 0px 10px 0px 10px;
             background-color: #292929;
-            display: flex;
 
             img {
                 max-width: 177px;
