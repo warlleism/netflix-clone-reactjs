@@ -15,13 +15,17 @@ const Carousel_Movie = (props) => {
     const baseUrl = "https://image.tmdb.org/t/p/original/"
 
     useEffect(() => {
-        fetch(props.url)
-            .then((res) => res.json())
-            .then((data) => {
-                setTimeout(() => {
-                    setData(data)
-                }, 2000)
-            })
+        try {
+            fetch(props.url)
+                .then((res) => res.json())
+                .then((data) => {
+                    setTimeout(() => {
+                        setData(data)
+                    }, 2000)
+                })
+        } catch (err) {
+            console.log('Error request')
+        }
     }, [])
 
     const Rigth = () => {

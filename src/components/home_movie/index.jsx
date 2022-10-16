@@ -21,6 +21,9 @@ const Home_Movie = () => {
     }
 
     useEffect(() => {
+        RandomNumer(1, 20)
+        RandomRate(30, 100)
+
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=0f875dab6950849459889f8e8eec207b&language=en-EU&page=1")
             .then((res) => res.json())
             .then((data) => {
@@ -29,11 +32,6 @@ const Home_Movie = () => {
                 }, 2000)
             })
     }, [])
-
-    useEffect(() => {
-        RandomNumer(1, 20)
-        RandomRate(30, 100)
-    }, [data])
 
     return (
         <div className="home_movie-container"
@@ -50,7 +48,7 @@ const Home_Movie = () => {
                         <div className="titulo">{data?.results?.[random]?.original_title}</div>
                         <div className="descricao"><strong style={{ color: "#04c304" }}>{randomRate}% relevante </strong>{data?.results?.[random]?.overview?.substring(0, 200)}...</div>
                         <div className="info-content">
-                            <div className="assistir"><FontAwesomeIcon icon={faPlay} className="icon" style={{marginRight: 8}} /> Assistir</div>
+                            <div className="assistir"><FontAwesomeIcon icon={faPlay} className="icon" style={{ marginRight: 8 }} /> Assistir</div>
                             <div className="mais-informacoes"><FontAwesomeIcon icon={faCircleInfo} className="icon" /> Mais informações</div>
                         </div>
                     </div>

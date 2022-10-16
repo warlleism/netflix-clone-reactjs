@@ -151,13 +151,14 @@
         overflow-y: hidden;
         overflow-x: scroll !important;
 
-        .icon-container {
-            display: none;
+        .cards-continer {
+            .info {
+                display: none !important;
+            }
         }
 
-        .cards-continer {
-            justify-content: space-between !important;
-
+        .icon-container {
+            display: none;
         }
     }
 
