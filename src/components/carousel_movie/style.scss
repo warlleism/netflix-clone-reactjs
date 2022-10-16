@@ -1,10 +1,10 @@
 .carousel-continer {
     width: 99vw;
     bottom: 180px;
+    overflow: hidden;
     position: relative;
     margin-bottom: 80px;
     background-color: #0f0f0f;
-    overflow: hidden;
     box-shadow: #0f0f0f 10px 10px 90px 100px;
 
     .icon-container {

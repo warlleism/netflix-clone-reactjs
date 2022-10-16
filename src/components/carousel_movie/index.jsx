@@ -36,8 +36,9 @@ const Carousel_Movie = (props) => {
     }
 
     const ViewDescribeMovie = (event, opacity, width, translate, margin) => {
+        
         const a = event?.querySelector('#cardInfo');
-        if (position == 0) {
+        if (position > -22) {
             event.style.transform = `translateX(0px)`;
             a.style.width = `${width}px`;
             a.style.opacity = opacity;
@@ -58,7 +59,7 @@ const Carousel_Movie = (props) => {
             <div className="icon-container rigth" onClick={() => Rigth(-283)}>
                 <FontAwesomeIcon icon={faChevronRight} className="icon" />
             </div>
-            <div className="cards-continer" style={{ transform: `translateX(${position}%)` }}>
+            <div className="cards-continer" id="allCards" style={{ transform: `translateX(${position}%)` }}>
                 {
                     data?.results?.map(data => {
                         return (
