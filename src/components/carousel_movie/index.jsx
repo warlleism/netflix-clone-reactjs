@@ -58,14 +58,14 @@ const Carousel_Movie = (props) => {
                 {
                     data?.results?.map(data => {
                         return (
-                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target, 1, 360, 370, 370)} onMouseLeave={(event) => ViewDescribeMovie(event.target, 0, 0, 0, 0)}>
+                            <div className="cards" onMouseEnter={(event) => ViewDescribeMovie(event.target, 1, 270, 280, 280)} onMouseLeave={(event) => ViewDescribeMovie(event.target, 0, 0, 0, 0)}>
                                 {console.log(position)}
                                 <img className="img" id="img" src={`${baseUrl}${data?.poster_path}`} alt="" />
                                 <div id="cardInfo" className="info">
-                                    <div style={{ width: "300px", fontSize: '1.6rem' }}>
+                                    <div style={{ width: "200px", fontSize: '1.6rem' }}>
                                         {data?.original_title}
                                     </div>
-                                    <div style={{ fontSize: '0.9rem', width: "300px" }}>
+                                    <div style={{ fontSize: '0.9rem', width: "200px" }}>
                                         {data?.overview?.substring(0, 140)}...
                                     </div>
                                     <div className="continer-info-botoes" >
